@@ -1,0 +1,190 @@
+:root {
+    --clr-bg: #f6f5f9;
+    --clr-card-bg: rgba(255,255,255,0.8);
+    --clr-primary: #6C63FF;
+    --clr-secondary: #FF6584;
+    --clr-text: #333;
+    --clr-input-bg: #e9ecef;
+    --shadow: 0 8px 20px rgba(0,0,0,0.05);
+    --transition: 0.3s ease;
+  }
+  
+  /* Reset & Base */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background: var(--clr-bg);
+    font-family: 'Poppins', sans-serif;
+    color: var(--clr-text);
+    scroll-behavior: smooth;
+  }
+  
+  /* Navbar */
+  .navbar {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    box-shadow: var(--shadow);
+    z-index: 100;
+  }
+  .navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+  }
+  .navbar li {
+    margin: 0 1rem;
+  }
+  .navbar a {
+    display: block;
+    padding: 1rem;
+    color: var(--clr-text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition);
+  }
+  .navbar a:hover,
+  .navbar a.active {
+    color: var(--clr-primary);
+  }
+  
+  /* Wrapper */
+  .wrapper {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  /* Cards */
+  .card {
+    background: var(--clr-card-bg);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+  }
+  
+  /* Header */
+  .app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .currency-select {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 8px;
+    background: var(--clr-input-bg);
+    box-shadow:
+      inset 3px 3px 8px rgba(0,0,0,0.05),
+      inset -3px -3px 8px rgba(255,255,255,0.7);
+  }
+  
+  /* Balance Card */
+  .balance-card h2 {
+    margin-bottom: 0.5rem;
+    color: var(--clr-secondary);
+  }
+  .balance-card p {
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+  
+  /* Form Card */
+  .form-card h2 {
+    margin-bottom: 1rem;
+    color: var(--clr-primary);
+  }
+  .form-card form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .form-card input,
+  .form-card select {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 10px;
+    background: var(--clr-input-bg);
+    box-shadow:
+      inset 3px 3px 8px rgba(0,0,0,0.05),
+      inset -3px -3px 8px rgba(255,255,255,0.7);
+    transition: background var(--transition);
+  }
+  .form-card input:focus,
+  .form-card select:focus {
+    background: #e8e8ee;
+  }
+  .neumorphic-btn {
+    grid-column: span 2;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 10px;
+    background: var(--clr-primary);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: background var(--transition), transform var(--transition);
+  }
+  .neumorphic-btn:hover {
+    background: var(--clr-secondary);
+    transform: translateY(-4px);
+  }
+  
+  /* List Card */
+  .list-card h2 {
+    margin-bottom: 1rem;
+    color: var(--clr-primary);
+  }
+  .list-card ul {
+    list-style: none;
+  }
+  .list-card li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.8rem;
+    background: #f0f0f5;
+    border-radius: 8px;
+    box-shadow:
+      inset 3px 3px 8px rgba(0,0,0,0.05),
+      inset -3px -3px 8px rgba(255,255,255,0.7);
+    transition: transform var(--transition);
+  }
+  .list-card li:hover {
+    transform: translateX(5px);
+  }
+  
+  /* Chart Card */
+  .chart-card h2 {
+    margin-bottom: 1rem;
+    color: var(--clr-secondary);
+  }
+  .chart-card canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* Responsive */
+  @media (max-width: 500px) {
+    .form-card form {
+      grid-template-columns: 1fr;
+    }
+    .navbar ul {
+      flex-wrap: wrap;
+    }
+    .navbar li {
+      margin: 0.3rem;
+    }
+  }
+  
